@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"
+    >
+
+
+    <style>
+        nav{
+            color: white;
+        }
+        body{
+            background-color: #9a1b75;
+        }
+        h1{
+            color: #9a1b75;
+            font-size: 25px;
+            font-weight: 100px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Leave</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--navbar links-->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/leaves}">Leave</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Add Leave </h1>
+
+            <div class="card-body">
+                <form th:action="@{/leaves}" th:object = "${leave}" method="POST">
+                    <div class="form-group">
+                        <label>Employee Name</label>
+                        <input
+                                type="text"
+                                name="employeeName"
+                                th:field="*{employeeName}"
+                                class="form-control"
+                                placeholder="Full Name"
+                        >
+
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input
+                                type="text"
+                                name="email"
+                                th:field="*{email}"
+                                class="form-control"
+                                placeholder="Email"
+                        >
+
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input
+                                type="text"
+                                name="phoneNumber"
+                                th:field="*{phoneNumber}"
+                                class="form-control"
+                                placeholder="Phone Number"
+                        >
+
+                    </div>
+                    <div class="form-group">
+                        <label>Leave Start Date</label>
+                        <input
+                                type="text"
+                                name="leaveStartDate"
+                                th:field="*{leaveStartDate}"
+                                class="form-control"
+                                placeholder="Leave Start Date"
+                        >
+
+                    </div>
+                    <div class="form-group">
+                        <label>Leave End Date</label>
+                        <input
+                                type="text"
+                                name="leaveEndDate"
+                                th:field="*{leaveEndDate}"
+                                class="form-control"
+                                placeholder="Leave End Date"
+                        >
+
+                    </div>
+                    <div class="form-group">
+                        <label>Leave Type</label>
+                        <input
+                                type="text"
+                                name="leaveType"
+                                th:field="*{leaveType}"
+                                class="form-control"
+                                placeholder="Leave Type"
+                        >
+
+                    </div>
+                    <div class="form-group">
+                        <label>Leave Status</label>
+                        <input
+                                type="text"
+                                name="leaveStatus"
+                                th:field="*{leaveStatus}"
+                                class="form-control"
+                                placeholder="Leave Status"
+                        >
+
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
