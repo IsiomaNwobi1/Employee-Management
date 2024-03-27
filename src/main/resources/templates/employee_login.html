@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>ADMIN LOGIN</title>
+    <title>EMPLOYEE LOGIN</title>
     <style>
         body {
             color: teal;
@@ -92,9 +92,9 @@
 </head>
 <body>
 <div class="login-form">
-    <form action="/employees" method="">
-        <h2>ADMIN LOGIN</h2>
-        <p class="lead">FOR ADMIN ONLY</p>
+    <form action="/employee_info" method="POST">
+        <h2>EMPLOYEE LOGIN</h2>
+        <p class="lead">FOR EMPLOYEE ONLY</p>
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -119,14 +119,15 @@
 					<i class="fa fa-lock"></i>
 					<i class="fa fa-check"></i>
 				</span>
-                <input type="password" class="form-control" th:name="adminToken" placeholder="Admin Token" required="required">
+                <input type="password" class="form-control" th:name="Token" placeholder="Token" required="required">
             </div>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block btn-lg">Login</button>
         </div>
     </form>
-    <div class="text-center">Are you an Employee? <a href="/employee_login">Login here</a>.</div>
+    <div class="text-center">Welcome, have a WONDERFUL day..</a>.</div>
 </div>
 </body>
 </html>
+
